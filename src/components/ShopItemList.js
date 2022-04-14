@@ -12,7 +12,7 @@ const ShopItemList = ({items}) => {
             <h2 id="list-header">List</h2>
             <table>
                 <tr>
-                    <th>Name</th>
+                    <th>Colour</th>
                     <th>Price</th>
                     <th>Add to basket</th>
                 </tr>

@@ -6,40 +6,48 @@ import UserContext from "../context/UserContext";
 const MainContainer = () => {
 
     const[user, setUser] = useState({
-        name: "John Doe",
+        name: "Stephanie Boyne",
         basketItems:[
-            {name: "Pasta", price: 2, quantity: 1},
-            {name: "apples", price:2, quantity: 2}
+            {colour: "Pasta", price: 2, quantity: 1},
+            {colour: "apples", price:1, quantity: 2}
         ]
     })
 
     const[items, setItems] = useState([
-        {name :"apples", price: 1},
-        {name: "oranges" , price: 3},
-        {name: "Bread", price: 2},
-        {name: "prawns", price: 5}
+        {colour :"apples", price: 1},
+        {colour: "oranges" , price: 3},
+        {colour: "Bread", price: 2},
+        {colour: "prawns", price: 5}
     ])
 
     const onAddToBasket = function(selectedItem){
-        const temp = {...user}
-
+        const temp = {...user};
         const existsingItem = temp.basketItems.find((item) => {
-            return selectedItem.name === item.name
+            return selectedItem.colour === item.colour;
         })
         if (existsingItem) {
             existsingItem.quantity+=1;
         } else {
-            selectedItem.quantity = 1
+            selectedItem.quantity = 1;
             temp.basketItems.push(selectedItem);
         } 
-        setUser(temp)
+        setUser(temp);
     }
 
     const removeFromBasket = function(selectedItem){
         const temp = {...user}
-        const index = temp.basketItems.indexOf(selectedItem)
-        temp.basketItems.splice(index, 1)
-        setUser(temp)
+        if (selectedItem.quantity === 1) {
+            const index = temp.basketItems.indexOf(selectedItem)
+            temp.basketItems.splice(index, 1);
+            
+        } else {
+            temp.basketItems.forEach((item) => {
+                if (item.colour === selectedItem.colour) {
+                    item.quantity -= 1;
+                }
+            })
+        }
+        setUser(temp);
     }
 
     const calculateTotal = function(user) {

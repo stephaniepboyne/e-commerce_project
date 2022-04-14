@@ -7,7 +7,7 @@ const BasketItem= ({item}) => {
 
     const handleRemoveFromBasket = function(){
         removeFromBasket(item)
-        console.log(`${item.name} removed from basket`)
+        console.log(`${item.colour} removed from basket`)
     }
 
     const getPrice = item.price * item.quantity
@@ -15,7 +15,7 @@ const BasketItem= ({item}) => {
     return (
         <>
             <tr>
-                <td>{item.name}</td>
+                <td>{item.colour}</td>
                 <td>{getPrice}</td>
                 <td><button onClick={handleRemoveFromBasket}>Remove</button></td>
                 <td>{item.quantity}</td>

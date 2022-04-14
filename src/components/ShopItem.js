@@ -7,13 +7,13 @@ const ShopItem = ({item}) => {
 
     const handleAddToBasket = function(){
         onAddToBasket(item)
-        console.log(`${item.name} added to basket`)
+        console.log(`${item.colour} added to basket`)
     }
 
     return (
         <>
             <tr>
-                <td>{item.name}</td>
+                <td>{item.colour}</td>
                 <td>{item.price}</td>
                 <td><button onClick={handleAddToBasket}>Add to Basket</button></td>
             </tr>

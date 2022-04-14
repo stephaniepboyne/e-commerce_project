@@ -10,12 +10,13 @@ const BasketList = ({user}) => {
 
     return(
         <div>
-            <h2>{user.name}'s basket</h2>
+            <h2>{user.name}'s Basket</h2>
             <table>
                 <tr>
-                    <th>Name</th>
+                    <th>Colour</th>
                     <th>Price</th>
-                    <th>Remove From Basket</th>
+                    <th>Remove Item From Basket</th>
+                    <th>Quantity</th>
                 </tr>
                 {basketItems}
             </table>

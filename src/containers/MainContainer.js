@@ -8,16 +8,17 @@ const MainContainer = () => {
     const[user, setUser] = useState({
         name: "Stephanie Boyne",
         basketItems:[
-            {colour: "Pasta", price: 2, quantity: 1},
-            {colour: "apples", price:1, quantity: 2}
+            {colour: "Titanium White ", price: 10, quantity: 1},
+            {colour: "Lemon Yellow", price: 10.5, quantity: 1}
         ]
     })
 
+
     const[items, setItems] = useState([
-        {colour :"apples", price: 1},
-        {colour: "oranges" , price: 3},
-        {colour: "Bread", price: 2},
-        {colour: "prawns", price: 5}
+        {colour: "Titanium White ", price: 10},
+        {colour: "Lemon Yellow", price: 10.5},
+        {colour: "Ultramarine Blue", price: 10.5},
+        {colour: "Emerald Green", price: 10.5}
     ])
 
     const onAddToBasket = function(selectedItem){
@@ -26,7 +27,7 @@ const MainContainer = () => {
             return selectedItem.colour === item.colour;
         })
         if (existsingItem) {
-            existsingItem.quantity+=1;
+            existsingItem.quantity += 1;
         } else {
             selectedItem.quantity = 1;
             temp.basketItems.push(selectedItem);
